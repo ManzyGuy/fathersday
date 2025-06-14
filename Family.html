@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Happy Father's Day to Our Amazing Uncles</title>
+  <link href="https://fonts.googleapis.com/css2?family=Raleway:wght@400;500;700&family=Dancing+Script:wght@700&display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <style>
+    :root {
+      --accent: #2ecc71;
+      --dark: #2c3e50;
+      --light-bg: #f9f9f9;
+      --transition: all 0.3s ease;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: 'Raleway', sans-serif;
+      color: #333;
+      background-color: var(--light-bg);
+      overflow-x: hidden;
+      line-height: 1.6;
+    }
+
+    /* HERO */
+    .hero {
+      position: relative;
+      height: 100vh;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5));
+    }
+
+    .hero-video {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+    }
+
+    .hero-text {
+      position: relative;
+      color: white;
+      text-align: center;
+      z-index: 2;
+      padding: 0 1rem;
+      max-width: 800px;
+      animation: fadeIn 1.5s ease-out;
+    }
+
+    .hero-text h1 {
+      font-size: 4rem;
+      margin-bottom: 1.5rem;
+      font-weight: 700;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.5);
+    }
+
+    .hero-text p {
+      font-size: 1.5rem;
+      margin-bottom: 2rem;
+      text-shadow: 1px 1px 3px rgba(0,0,0,0.5);
+    }
+
+    .family-icon {
+      font-size: 3rem;
+      margin-bottom: 1rem;
+      display: inline-block;
+      animation: bounce 2s infinite;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes bounce {
+      0%, 20%, 50%, 80%, 100% {transform: translateY(0);}
+      40% {transform: translateY(-20px);}
+      60% {transform: translateY(-10px);}
+    }
+
+    /* Scroll indicator */
+    .scroll-down {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      color: white;
+      font-size: 1.5rem;
+      animation: pulse 2s infinite;
+      z-index: 10;
+      cursor: pointer;
+    }
+
+    @keyframes pulse {
+      0% { opacity: 0.5; transform: translateY(0) translateX(-50%); }
+      50% { opacity: 1; transform: translateY(10px) translateX(-50%); }
+      100% { opacity: 0.5; transform: translateY(0) translateX(-50%); }
+    }
+
+    /* Sections */
+    section {
+      padding: 5rem 1rem;
+      max-width: 1200px;
+      margin: auto;
+      position: relative;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 2.8rem;
+      margin-bottom: 3rem;
+      color: var(--dark);
+      position: relative;
+      display: inline-block;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+
+    h2::after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(90deg, var(--accent), var(--dark));
+      border-radius: 3px;
+    }
+
+    .section-icon {
+      font-size: 2rem;
+      margin-right: 0.5rem;
+      vertical-align: middle;
+    }
+
+    /* Pillars Section */
+    .pillars {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 3rem;
+    }
+
+    .pillar {
+      flex: 1;
+      min-width: 250px;
+      max-width: 350px;
+      background: white;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+      text-align: center;
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .pillar::before {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: 5px;
+      background: linear-gradient(90deg, var(--accent), var(--dark));
+      transition: var(--transition);
+    }
+
+    .pillar:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+    }
+
+    .pillar:hover::before {
+      height: 10px;
+    }
+
+    .pillar-icon {
+      font-size: 3rem;
+      color: var(--accent);
+      margin-bottom: 1rem;
+    }
+
+    .pillar h3 {
+      color: var(--dark);
+      margin-bottom: 1rem;
+      font-size: 1.5rem;
+    }
+
+    /* Family Messages */
+    .message-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2.5rem;
+    }
+
+    .message-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 15px;
+      box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+      transition: var(--transition);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .message-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 5px;
+      height: 100%;
+      background: var(--accent);
+      transition: var(--transition);
+    }
+
+    .message-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    }
+
+    .message-card:hover::before {
+      width: 8px;
+      background: var(--dark);
+    }
+
+    .message-card h3 {
+      color: var(--dark);
+      margin-bottom: 1rem;
+      font-size: 1.3rem;
+      position: relative;
+      padding-bottom: 0.5rem;
+    }
+
+    .message-card h3::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 50px;
+      height: 2px;
+      background-color: var(--accent);
+    }
+
+    .message-card p {
+      color: #555;
+      font-size: 1.1rem;
+    }
+
+    /* Memories Gallery */
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+      gap: 1.5rem;
+      margin-top: 3rem;
+    }
+
+    .gallery-item {
+      position: relative;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+      transition: var(--transition);
+      aspect-ratio: 1/1;
+    }
+
+    .gallery-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+
+    .gallery-item:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .gallery-item:hover img {
+      transform: scale(1.1);
+    }
+
+    .gallery-caption {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      padding: 1rem;
+      background: linear-gradient(transparent, rgba(0,0,0,0.7));
+      color: white;
+      opacity: 0;
+      transition: var(--transition);
+    }
+
+    .gallery-item:hover .gallery-caption {
+      opacity: 1;
+    }
+
+    /* Footer */
+    footer {
+      background: linear-gradient(135deg, var(--dark), #34495e);
+      color: white;
+      text-align: center;
+      padding: 5rem 1rem;
+      margin-top: 4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    footer::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 10px;
+      background: linear-gradient(90deg, var(--accent), transparent);
+    }
+
+    footer h2 {
+      color: white;
+      font-size: 2.5rem;
+      margin-bottom: 2rem;
+      font-family: 'Dancing Script', cursive;
+    }
+
+    footer h2::after {
+      background: var(--accent);
+    }
+
+    footer p {
+      font-size: 1.2rem;
+      max-width: 700px;
+      margin: 0 auto 1.5rem;
+      line-height: 1.8;
+    }
+
+    .signature {
+      font-family: 'Dancing Script', cursive;
+      font-size: 2rem;
+      margin-top: 2rem;
+      color: var(--accent);
+    }
+
+    .heart-beat {
+      animation: heartbeat 1.5s infinite;
+      display: inline-block;
+    }
+
+    @keyframes heartbeat {
+      0% { transform: scale(1); }
+      25% { transform: scale(1.1); }
+      50% { transform: scale(1); }
+      75% { transform: scale(1.1); }
+      100% { transform: scale(1); }
+    }
+
+    /* Responsive */
+    @media (max-width: 992px) {
+      .hero-text h1 {
+        font-size: 3rem;
+      }
+      
+      h2 {
+        font-size: 2.3rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero-text h1 {
+        font-size: 2.5rem;
+      }
+      
+      .hero-text p {
+        font-size: 1.2rem;
+      }
+      
+      h2 {
+        font-size: 2rem;
+      }
+      
+      .pillar {
+        min-width: 100%;
+      }
+    }
+
+    @media (max-width: 576px) {
+      .hero-text h1 {
+        font-size: 2rem;
+      }
+      
+      .message-card {
+        padding: 1.5rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <section class="hero" id="hero">
+    <div class="hero-text">
+      <div class="family-icon">👨‍👩‍👧‍👦</div>
+      <h1>Happy Father's Day to Our Amazing Dads!</h1>
+      <p>Your love and guidance have shaped our family in countless ways</p>
+    </div>
+    <div class="scroll-down" onclick="document.getElementById('pillars').scrollIntoView({behavior: 'smooth'})">
+      <i class="fas fa-chevron-down"></i>
+    </div>
+  </section>
+
+  <!-- PILLARS OF OUR FAMILY -->
+  <section id="pillars">
+    <h2><i class="fas fa-chess-king section-icon"></i>The Pillars of Our Family</h2>
+    <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; font-size: 1.2rem;">
+      You have been the strong foundation upon which our family stands. Through every challenge and celebration, you've been our rocks.
+    </p>
+    <div class="pillars">
+      <div class="pillar">
+        <div class="pillar-icon">🛡️</div>
+        <h3>Our Protectors</h3>
+        <p>You've always been there to shield us from life's storms, offering safety and security when we needed it most.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">🧠</div>
+        <h3>Our Wisdom Keepers</h3>
+        <p>Your advice and life lessons have guided generations, helping us navigate both big decisions and daily challenges.</p>
+      </div>
+      <div class="pillar">
+        <div class="pillar-icon">❤️</div>
+        <h3>Our Heart</h3>
+        <p>Your unconditional love has bound our family together, creating connections that time and distance cannot break.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAMILY MESSAGES -->
+  <section id="messages">
+    <h2><i class="fas fa-comments section-icon"></i>Messages from the Family</h2>
+    <p style="text-align: center; max-width: 800px; margin: 0 auto 2rem; font-size: 1.2rem;">
+      Here's what everyone in the family wants to say to you on this special day:
+    </p>
+    <div class="message-grid">
+      <div class="message-card">
+        <h3>From [Your Name]</h3>
+        <p>Dear Uncles, you've been like second fathers to me. I'll never forget how you [specific memory]. Your [specific quality] has inspired me to be a better person. Thank you for always being there with your wisdom and your warm hugs when I needed them most.</p>
+      </div>
+      <div class="message-card">
+        <h3>From [Cousin's Name]</h3>
+        <p>Happy Father's Day to the coolest uncles ever! Remember when you taught me how to [specific memory]? That day meant so much to me. You've shown me what it means to be [specific quality] and I'm so grateful for your presence in my life.</p>
+      </div>
+      <div class="message-card">
+        <h3>From [Aunt's Name]</h3>
+        <p>To my wonderful brothers, you've been amazing uncles to our children and pillars of strength for our whole family. Your generosity in [specific example] and your dedication to [family value] has shaped our family in the most beautiful ways.</p>
+      </div>
+      <div class="message-card">
+        <h3>From [Grandparent's Name]</h3>
+        <p>Seeing the fathers and uncles you've become fills my heart with pride. You've carried on our family traditions like [specific example] while creating your own legacy through [specific example].</p>
+      </div>
+      <div class="message-card">
+        <h3>From [Younger Cousin's Name]</h3>
+        <p>Uncles, you're the BEST! Thanks for always [specific thing they do] and for making me laugh when you [specific memory]. I love when you [specific activity] with me. You're my heroes!</p>
+      </div>
+      <div class="message-card">
+        <h3>From [Family Friend]</h3>
+        <p>Though not related by blood, you've welcomed me as family. Your guidance when [specific example] changed my life. Thank you for being the kind of men who make everyone around them feel valued and loved.</p>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <!-- FOOTER -->
+  <footer>
+    <h2>With All Our Love</h2>
+    <p>
+      Today we honor you not just as uncles, but as fathers to our entire family. Your influence extends far beyond what words can capture.
+    </p>
+    <p>
+      Thank you for the countless sacrifices, the wisdom shared, and the love that has nurtured us all.
+    </p>
+    <div class="signature">
+      <span class="heart-beat">❤️</span> The Entire [Your Family Name] Family <span class="heart-beat">❤️</span>
+    </div>
+  </footer>
+
+  <script>
+    // Smooth scrolling for navigation
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+      anchor.addEventListener('click', function (e) {
+        e.preventDefault();
+        document.querySelector(this.getAttribute('href')).scrollIntoView({
+          behavior: 'smooth'
+        });
+      });
+    });
+    
+    // Add animation when scrolling
+    const observerOptions = {
+      threshold: 0.1
+    };
+    
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add('animate');
+        }
+      });
+    }, observerOptions);
+    
+    document.querySelectorAll('section').forEach(section => {
+      observer.observe(section);
+    });
+    
+    // Video fallback
+    const video = document.querySelector('.hero-video');
+    if (video) {
+      video.addEventListener('error', function() {
+        this.style.display = 'none';
+        const fallbackImg = document.createElement('img');
+        fallbackImg.src = 'family-photo.jpg';
+        fallbackImg.alt = 'Family Photo';
+        fallbackImg.style.width = '100%';
+        fallbackImg.style.height = '100%';
+        fallbackImg.style.objectFit = 'cover';
+        this.parentNode.insertBefore(fallbackImg, this);
+      });
+    }
+  </script>
+</body>
+</html>
